@@ -1,0 +1,42 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+
+    .backPushButton {
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        display: flex;
+        margin-top: 30px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+        width: 220px;
+    }
+
+    .backPushButton:hover{
+        border-width: 2px;
+        border-style: solid;
+        border-color: #85cfc2ff;
+    }
+
+    .backPushButton:hover .point{
+        background-position: left 0px top -38px;
+    }
+
+    .backPushButton .labelBox{
+        padding-left: 10px;
+    }
+}

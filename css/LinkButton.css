@@ -1,0 +1,73 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+
+    .contentBox.contentView{
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+
+    .contentBox.preview{
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+
+    .contentBox.list{
+        display: initial;
+    }
+
+    .linkButton {
+        display: flex;
+        height: 38px;
+        max-width: 180px;
+        margin: 4px 10px 4px 4px;
+        padding: 2px;
+    }
+
+    .linkButton.contentView {
+        display: flex;
+        height: 38px;
+        max-width: 180px;
+        margin: 4px 10px 4px 4px;
+        padding: 2px;
+        padding-right: 8px;
+    }
+
+    .linkButton:hover{
+        border-radius: 5px;
+        background-color: #F2F2F2;
+        cursor: pointer;
+    }
+
+    .linkButton:hover .point{
+        background-position: left 0px top -38px;
+        /*background-position: left 0px top -57px;*/
+    }
+
+    .linkButton:hover .name{
+        color: #346e63ff;
+    }
+
+    .linkButton .labelBox {
+        display: initial;
+    }
+
+    .linkButton .name {
+        font-weight: normal;
+        font-size: 18px;
+        color: #85cfc2ff;
+        padding-left: 7px;
+        height: 22px;
+    }
+
+    .linkButton .descript {
+        font-size: 11px;
+        color: gray;
+        padding-left: 7px;
+    }
+}

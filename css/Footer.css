@@ -1,0 +1,18 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@media screen and  (min-width: 641px) {
+    .footer{
+        /* BEGIN: набор свойств центрирующих блок по вертикали*/
+        position: relative;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* END:   набор свойств центрирующие блок по вертикали*/
+
+        background-color: #026644ff;
+        height: available;
+    }
+}

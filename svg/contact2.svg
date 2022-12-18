@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="contact2.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg3467"
+   version="1.1"
+   viewBox="0 0 18.232737 3.3845727"
+   height="3.3845727mm"
+   width="18.232737mm">
+  <defs
+     id="defs3461" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="182"
+     inkscape:window-height="1040"
+     inkscape:window-width="1513"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="29.008197"
+     inkscape:cx="24.867411"
+     inkscape:zoom="5.6"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata3464">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-71.014584,-58.783904)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <text
+       id="text1068"
+       y="61.599754"
+       x="75.432518"
+       style="font-size:3.52777px;line-height:1.25;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#838e34;fill-opacity:1;stroke-width:0.264583;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Bold';fill:#838e34;fill-opacity:1;stroke-width:0.264583;"
+         y="61.599754"
+         x="75.432518"
+         id="tspan1066"
+         sodipodi:role="line">КОНТАКТ</tspan></text>
+    <path
+       d="m 73.976083,58.783904 c 0.12844,0 0.21259,0.51414 0.24277,0.733435 1.00026,0.162412 1.3506,0.935439 1.3506,0.935439 0,0 -0.17282,0.750951 -1.29422,1.033146 -0.009,0.229678 -0.0427,0.760682 -0.17123,0.672844 -0.16282,-0.11126 -0.2093,-0.315227 -0.2093,-0.315227 0,0 0.0277,-0.154327 0.068,-0.297735 -0.31973,0.04263 -0.64776,0.03235 -0.94315,-0.02703 -0.0148,-0.003 -0.0704,-0.139305 -0.1514,-0.178072 -0.004,-0.0017 -0.008,-0.0037 -0.0117,-0.0054 -0.0154,0.05485 -0.12748,0.427415 -0.31092,0.34139 -0.19772,-0.09272 -0.61641,-0.500667 -0.55825,-0.649012 0.006,-0.01553 0.0208,-0.02427 0.0417,-0.02799 -0.19329,-0.07167 -0.3532,-0.127202 -0.40224,-0.13893 -0.23261,-0.05563 -0.40704,0.44503 -0.56986,0.44503 -0.0582,0 -0.0582,-1.427827 0.0116,-1.427827 0.0698,0 0.3838,0.463609 0.61641,0.426523 0.1937,-0.03089 0.57339,-0.550086 1.47386,-0.744437 -0.0104,-0.08539 -0.0219,-0.176122 -0.0317,-0.23836 -0.0233,-0.148346 0.68617,-0.537768 0.84899,-0.537768 z"
+       style="fill:#e6e6e6;stroke:none;stroke-width:0.0205596px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1097" />
+  </g>
+</svg>

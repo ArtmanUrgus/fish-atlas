@@ -1,0 +1,101 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+
+    .treeButton {
+        display: flex;
+        height: 38px;
+        min-width: 180px;
+        margin: 4px 10px 4px 4px;
+        padding: 2px;
+    }
+
+    .treeButton:hover{
+        border-radius: 5px;
+        background-color: #F2F2F2;
+        cursor: pointer;
+    }
+
+    .treeButton .labelBox {
+        display: initial;
+    }
+
+    .treeButton.active{
+        border-radius: 5px;
+        background-color: #e0efec;
+    }
+
+    .treeButton:hover.selectable .point {
+        background-position: left 0px top -38px;
+    }
+
+    .point {
+        background: white url("../svg/point.svg") no-repeat 0px 0px;
+        background-color: #ffffff00;
+        width: 19px;
+        height: 19px;
+        margin: 2px 0px 0px 2px;
+    }
+
+    .point.enabled {
+        background-position: left 0px top -0px;
+    }
+
+    .point.disabled {
+        background-position: left 0px top -19px;
+    }
+
+    .point.active {
+        background-position: left 0px top -38px;
+    }
+
+    .name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #346e63ff;
+        padding-left: 7px;
+        height: 22px;
+    }
+
+    .name.disabled {
+        color: gray;
+        font-weight: lighter;
+    }
+
+    .name.enabled {
+        color: #85cfc2ff;
+    }
+
+    .descript {
+        font-size: 11px;
+        color: gray;
+        padding-left: 7px;
+    }
+
+    .treeButton#subclassFisch {
+        padding-left: 10px;
+    }
+
+    .treeButton#groupsFisch {
+        padding-left: 20px;
+    }
+
+    .treeButton#familyFisch {
+        padding-left: 30px;
+    }
+
+    .treeButton#genusFisch {
+        padding-left: 40px;
+    }
+
+    .treeButton#speciesFisch {
+        padding-left: 50px;
+    }
+
+    .treeButton#subspeciesFisch {
+        padding-left: 60px;
+    }
+}

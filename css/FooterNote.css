@@ -1,0 +1,39 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+    .footer_note {
+        background-color: #e6e7deff;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    #footer_text{
+        /* BEGIN: набор свойств центрирующих блок по вертикали*/
+        position: relative;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* END:   набор свойств центрирующие блок по вертикали*/
+
+        display: flex;
+        padding: 10px 0 10px 0;
+        width: 1000px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-style: normal;
+        font-size: 12px;
+        color: darkcyan;
+    }
+    .textBlock{
+        padding: 20px 20px 20px 0;
+        bottom: 0;
+    }
+    #textBlockLeft{
+        min-width: 500px;
+    }
+}

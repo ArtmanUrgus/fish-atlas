@@ -1,0 +1,107 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+    .menu{
+        background-color: #1a1a1aff;
+        height: 42px;
+    }
+    .nav{
+        /* BEGIN: набор свойств центрирующих блок по вертикали*/
+        position: relative;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* END:   набор свойств центрирующие блок по вертикали*/
+        height: 42px;
+        display: flex;
+        width: 950px;
+    }
+    a.button{
+        height: 20px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #808080ff;
+        cursor: pointer;
+    }
+    a.button:hover {
+        height: 20px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        background-position: -26px;
+    }
+    #active_state{
+        color: #838e31ff;
+    }
+    #active_state #fisch_icon{
+        background-position: left 0px top -26px;
+    }
+    #titel {
+        padding-left: 35px;
+    }
+    a.button #fisch_icon{
+        background: #ffffff00 url("../img/fisch.png") no-repeat 0px 0px;
+    }
+    a.button:hover #fisch_icon{
+        background-position: left 0px top -26px;
+    }
+    .search_field{
+        border-color: #808080ff;
+        background-color: white;
+        border-width: 4px;
+        border-radius: 5px;
+        width: 400px;
+        height: 26px;
+        margin: 8px;
+    }
+    #searchText{
+        margin: 4px;
+        background-color: white;
+        border-width: 0px;
+        color: #838e31ff;
+        width: 390px;
+    }
+    #searchText:active {
+        border-width: 0px;
+        user-focus: none;
+    }
+    #submitButton{
+        margin: 8px 0 8px 0;
+        background: dimgray url("../svg/search.svg") no-repeat 0px 0px;
+        border-radius: 3px;
+        border-width: 0px;
+        height: 27px;
+        width: 27px;
+    }
+    #submitButton:hover {
+        background-color: #838e31ff;
+        background-position: left 0px top -28px;
+    }
+    .langSelector{
+        font-family: "Roboto Condensed";
+        font-weight: bold;
+        font-size: 14px;
+        background-color: #808080ff;
+        border-width: 0px;
+        border-radius: 3px;
+        /*font-weight: bold;*/
+        margin: 8px 0 8px 0;
+        height: 27px;
+        width: 48px;
+        color: white;
+        white-space: nowrap;
+    }
+    select option {
+        background: white;
+        color: dimgray;
+        font-weight: normal;
+        white-space: initial;
+    }
+}

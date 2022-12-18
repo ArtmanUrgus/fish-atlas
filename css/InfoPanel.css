@@ -1,0 +1,40 @@
+/* Main Stylesheet file for Fish Atlas Project*/
+/* Author: Artur Mangus 2022 */
+
+@import "Fonts.css";
+
+@media screen and  (min-width: 641px) {
+
+    .infoPanel {
+        display: flex;
+        height: 38px;
+        margin: 4px 10px 4px 4px;
+        padding: 2px;
+    }
+
+    .infoPanel .labelBox {
+        display: initial;
+    }
+
+    .point {
+        background: white url("../svg/point.svg") no-repeat 0px 0px;
+        background-color: #ffffff00;
+        width: 19px;
+        height: 19px;
+        margin: 2px 0px 0px 2px;
+    }
+
+    #name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #346e63ff;
+        padding-left: 7px;
+        height: 22px;
+    }
+
+    #descript {
+        font-size: 11px;
+        color: gray;
+        padding-left: 7px;
+    }
+}

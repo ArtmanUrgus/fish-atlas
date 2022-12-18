@@ -1,0 +1,269 @@
+CREATE TABLE IF NOT EXISTS specimen_fish_ru (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS specimen_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS class_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS class_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS subclass_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS subclass_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS groups_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS groups_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS suprafamily_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS suprafamily_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS family_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS family_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS genus_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS genus_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS species_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS species_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS subspecies_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS subspecies_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS specimen_fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS specimen_fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(1024) NOT NULL,
+	discription VARCHAR(2048)
+);
+CREATE TABLE IF NOT EXISTS fish_rus (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	class INT,
+	subclass INT,
+	groups INT,
+	family INT,
+	genus INT,
+	species INT,
+	subspecies INT,
+	specimen INT,
+	FOREIGN KEY (class) REFERENCES class_fish_rus (id),
+	FOREIGN KEY (subclass) REFERENCES subclass_fish_rus (id),
+	FOREIGN KEY (groups) REFERENCES groups_fish_rus (id),
+	FOREIGN KEY (family) REFERENCES family_fish_rus (id),
+	FOREIGN KEY (genus) REFERENCES genus_fish_rus (id),
+	FOREIGN KEY (species) REFERENCES species_fish_rus (id),
+	FOREIGN KEY (subspecies) REFERENCES subspecies_fish_rus (id),
+	FOREIGN KEY (specimen) REFERENCES specimen_fish_rus (id),
+	image BLOB
+);
+CREATE TABLE IF NOT EXISTS fish_eng (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	class INT,
+	subclass INT,
+	groups INT,
+	family INT,
+	genus INT,
+	species INT,
+	subspecies INT,
+	specimen INT,
+	FOREIGN KEY (class) REFERENCES class_fish_eng (id),
+	FOREIGN KEY (subclass) REFERENCES subclass_fish_eng (id),
+	FOREIGN KEY (groups) REFERENCES groups_fish_eng (id),
+	FOREIGN KEY (family) REFERENCES family_fish_eng (id),
+	FOREIGN KEY (genus) REFERENCES genus_fish_eng (id),
+	FOREIGN KEY (species) REFERENCES species_fish_eng (id),
+	FOREIGN KEY (subspecies) REFERENCES subspecies_fish_eng (id),
+	FOREIGN KEY (specimen) REFERENCES specimen_fish_eng (id),
+	image BLOB
+);
+
+
+INSERT INTO class_fish_rus ( id, name, discription) VALUES (1, 'Костные рыбы', '');
+INSERT INTO class_fish_rus ( id, name, discription) VALUES (2, 'Хрящевые рыбы', '');
+
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (1, 'Костно-хрящевые', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (2, 'Двоякодышащие', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (3, 'Кистеперые', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (4, 'Костистые рыбы', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (5, 'Акулы', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (6, 'Скаты', '');
+INSERT INTO subclass_fish_rus ( id, name, discription) VALUES (7, 'Химеры', '');
+
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (1, 'Осетровые', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (2, 'Сельдеобразные', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (3, 'Лососеобразные', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (4, 'Карпообразные', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (5, 'Сомообразные', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (6, 'Трескообразные', '');
+INSERT INTO groups_fish_rus ( id, name, discription) VALUES (7, 'Камбалообразные', '');
+
+INSERT INTO suprafamily_fish_rus ( name, discription) VALUES ('Карпоподобные', '');
+INSERT INTO suprafamily_fish_rus ( name, discription) VALUES ('Вьюноподобные', '');
+INSERT INTO suprafamily_fish_rus ( name, discription) VALUES ('Gadoidea', '');
+
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Осетровые (Acipenseridae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Веслоносые (Polyodontidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Chondrosteidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Errolichthyidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Peipiaosteidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Дентицепсовые (Denticipitidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Дорабовые, или зубастые сельди (Chirocentridae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Сельдевые (Clupeidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Анчоусовые (Engraulidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Пристигастеровые (Pristigasteridae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Лососёвые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Карповые (Cyprinidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Псилоринховые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Гиринохейловые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Чукучановые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Botiidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Vaillantellidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Вьюновые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Балиторовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Gastromyzontidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Немахейловые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Barbuccidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ellopostomatidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Serpenticobitidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Jianghanichthyidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ailiidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Акизовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Толстохвостые сомы, или амблицепсовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Амфилиевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Anchariidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ариевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Аспредовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Астроблеповые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Затылкопёрые сомы, или аухениптеровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Аухеногланидовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Австрогланидовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Косатковые, или багровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Панцирниковые сомы, или каллихтиевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Цетопсовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Хаковые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Клариевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Косатки-клароты, или кларотовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Краногланидовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Дипломистовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Бокочешуйниковые сомы, или броняковые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Эретистовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Семипёрые сомики, или гептаптеровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Мешкожаберные сомы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Horabagridae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Кошачьи сомы, или икталуровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Lacantuniidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Кольчужные сомы, или лорикариевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Электрические сомы, или малаптеруровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Перистоусые сомы, или мохоковые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Нематогениевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Пангасиевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Плоскоголовые сомы, или пимелодовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Угрехвостые сомы, или плотосовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Псевдопимелодовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ritidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Шильбовые (= Schilbidae)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Сколоплаксовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Сомовые (107 видов, Евразия, 6 см — 5 м)', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Горные сомы, или багариевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ванделлиевые, или пигидиевые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Andinichthyidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Bachmanniidae † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Hypsidoridae — Гипсидоровые † вымершие', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Bathygadidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Долгохвостовые, или макрурусовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Trachyrincidae', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Моровые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Макруроновые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Тресковые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Паркетниковые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Цитаровые, или крупночешуйные камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Калкановые, или скофтальмовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Паралихтиевые, или ложнопалтусовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Камбаловые, или правосторонние камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ботовые, или арноглоссовые, или левосторонние камбалы, или ромбовые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ахиропсеттовые, или безрукие камбалы, или южные камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Самаровые, или хохлатые камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ахировые', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Циноглоссовые, или левосторонние морские языки', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Солеевые, или косоротые, или правосторонние морские языки', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Паралихтодовые, или перцовые камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Пецилопсеттовые, или крупноглазые камбалы', '');
+INSERT INTO family_fish_rus ( name, discription) VALUES ('Ромбосолеевые, или языковидные камбалы', '');
+
+INSERT INTO genus_fish_rus ( name, discription) VALUES ('Мерлузовые', '');
+INSERT INTO genus_fish_rus ( name, discription) VALUES ('Меланоновые', '');
+INSERT INTO genus_fish_rus ( name, discription) VALUES ('Псеттодовые', '');
+INSERT INTO genus_fish_rus ( name, discription) VALUES ('Брегмацеровые', '');
+
+INSERT INTO species_fish_rus ( name, discription) VALUES ('Меланоновые', '');
+INSERT INTO species_fish_rus ( name, discription) VALUES ('Штейндахнериевые', '');
+INSERT INTO species_fish_rus ( name, discription) VALUES ('Эуклихтовые, или эвклихтиевые', '');
+INSERT INTO species_fish_rus ( name, discription) VALUES ('Плоскоголовый налим', '');
+
+
+INSERT INTO specimen_fish_ru (id, name, discription) VALUES (
+	1, 'Карась золотой (Carassius carassius)',
+	'Тело высокое умеренно сжатое с боков, с толстой спиной. Усиков нет. Килей на теле нет. У представителей рода зубы однорядные. У карася золотого 17-25. В полной боковой линии 32 - 35 крупных чешуй. Жаберных тычинок 23 - 25. Чешуйки на ощупь гладкие. Бока тела окрашены в медно-красный (особенно в темных торфяных водоемах), золотистые тона. Брюшко чуть-чуть светлее, спина заметна темнее. Плавники желтовато-красные с более темными концами. Длина тела до 40 см. Масса до 5 кг. В малокормных (олигатрофных) водоемах, например в лесных или тундровых озерах, есть тугорослые (карликовые) формы, длина тела которых не превышает 15 см, а масса 80 - 100 грамм. Наиболее обычная рыба страны, обитает в стоящих и медленнотекущих пресных водоемах.'
+);
