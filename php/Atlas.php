@@ -7,10 +7,10 @@ class Atlas
 {
     static public function createContainer(): string
     {
-        switch( $_COOKIE['pageID']  ){
-            case "article": return Article::createContainer();
-            case "main": return MainPage::createContainer();
-        }
+            switch( $_COOKIE['pageID']  ){
+                case "article": return Article::createContainer();
+                case "main": return MainPage::createContainer();
+            }
 
         return '';
     }

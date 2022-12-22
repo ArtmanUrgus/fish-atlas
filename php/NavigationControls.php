@@ -2,6 +2,7 @@
 
 class Navi
 {
+    // @formatter:off
     static private $disriptionType = [
         "Класс:" => "classFisch",
         "Надотряд:" => 'subclassFisch',
@@ -12,7 +13,7 @@ class Navi
         "Подвид:" => 'subspeciesFisch'
     ];
 
-    static public function treeButton($descript, $label, $type) : string
+    static public function treeButton($descript, $label, $type, $dbID) : string
     {
         if($_COOKIE['familyID'] == $label)
             $type = 'active';
@@ -21,7 +22,7 @@ class Navi
 
         if( in_array($type, $types) ) {
             return
-                '<div class="treeButton '.$type.'" id="'. self::$disriptionType[$descript].'" name="'.$label.'" onclick="setFamilyId(this)">' .
+                '<div class="treeButton '.$type.'" id="'. self::$disriptionType[$descript].'" name="'.$label.'" value="'.$dbID.'" onclick="setFamilyId(this)">' .
                     '<div class="point '.$type.'"></div>' .
                     '<div class="labelBox">' .
                         '<div class="name '.$type.'">' . $label . '</div>' .
@@ -134,5 +135,18 @@ class Navi
                 '<div class="point"></div>'.
                 '<div class="labelBox">Вернуться к оглавлению</div>'.
             '</div>';
+    }
+
+    static public function overview() : string
+    {
+        switch( $_COOKIE['viewID'] )
+        {
+            case 'preview':
+                return Navi::thumbnailOverviewPanel("Вид:", "Лосось", "preview", "./img/fishes/semga.jpg");
+            case 'list':
+                return  Navi::listOverviewPanel("Вид:", "Лосось", "list", Article::demoText(), "./img/fishes/semga.jpg");
+            case 'contentView':
+                return  Navi::contentOverviewPanel("Вид:", "Лосось", "contentView");
+        }
     }
 }

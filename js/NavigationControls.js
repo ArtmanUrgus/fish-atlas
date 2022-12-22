@@ -79,7 +79,7 @@ function setFamilyId(control)
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var viewID = getCookieById("viewID") + '&';
-        var familyID = 'familyID=' +  control.getAttribute("name");
+        var familyID = 'familyID=' +  control.getAttribute("value");
         document.cookie = familyID;
 
         var requestData = contentID + pageID + viewID + familyID;

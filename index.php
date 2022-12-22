@@ -6,7 +6,10 @@ setcookie('contentID', 'atlas');
 setcookie('pageID', 'main');
 setcookie('articleName', '');
 setcookie('viewID', 'preview');
-setcookie('familyID', 'Осетровые');
+setcookie('familyID', '1');
+
+$_COOKIE['familyID'] = '1';
+
 
 require_once "./php/PageSubject.php";
 

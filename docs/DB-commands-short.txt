@@ -8,30 +8,12 @@ CREATE TABLE class_fish (
 	discription VARCHAR(2048)
 );
 
-INSERT INTO class_fish ( id, name, discription) VALUES (1, 'Костные рыбы', '');
-INSERT INTO class_fish ( id, name, discription) VALUES (2, 'Хрящевые рыбы', '');
-
-CREATE TABLE subclass_fish (
-	id INT PRIMARY KEY,
-	name VARCHAR(1024) NOT NULL,
-	discription VARCHAR(2048)
-);
-
-INSERT INTO subclass_fish ( id, name, discription) VALUES (1, 'Костно-хрящевые', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (2, 'Двоякодышащие', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (3, 'Кистеперые', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (4, 'Костистые рыбы', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (5, 'Акулы', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (6, 'Скаты', '');
-INSERT INTO subclass_fish ( id, name, discription) VALUES (7, 'Химеры', '');
-
 CREATE TABLE groups_fish (
 	id INT PRIMARY KEY,
 	name VARCHAR(1024) NOT NULL,
 	discription VARCHAR(2048)
 );
 
-INSERT INTO groups_fish ( id, name, discription) VALUES (0, '', '');
 INSERT INTO groups_fish ( id, name, discription) VALUES (1, 'Осетровые', '');
 INSERT INTO groups_fish ( id, name, discription) VALUES (2, 'Сельдеобразные', '');
 INSERT INTO groups_fish ( id, name, discription) VALUES (3, 'Лососеобразные', '');
@@ -40,36 +22,13 @@ INSERT INTO groups_fish ( id, name, discription) VALUES (5, 'Сомообраз�
 INSERT INTO groups_fish ( id, name, discription) VALUES (6, 'Трескообразные', '');
 INSERT INTO groups_fish ( id, name, discription) VALUES (7, 'Камбалообразные', '');
 
-CREATE TABLE affiliation_fish (
-	id INT PRIMARY KEY,
-	class INT,
-	subclass INT,
-	groups INT,
-	FOREIGN KEY (class) REFERENCES class_fish (id),
-	FOREIGN KEY (subclass) REFERENCES subclass_fish (id),
-	FOREIGN KEY (groups) REFERENCES groups_fish (id)
-);
-
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (1, 1, 1, 1);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (2, 1, 2, 0);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (3, 1, 3, 0);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (4, 1, 4, 2);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (5, 1, 4, 3);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (6, 1, 4, 4);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (7, 1, 4, 5);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (8, 1, 4, 6);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (9, 1, 4, 7);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (10, 2, 5, 0);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (11, 2, 6, 0);
-INSERT INTO affiliation_fish ( id, class, subclass, groups ) VALUES (12, 2, 7, 0);
-
 CREATE TABLE ident (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	affiliation INT,
 	name VARCHAR(1024) NOT NULL,
 	image VARCHAR(1024),
 	discription VARCHAR(2048),
-	FOREIGN KEY (affiliation) REFERENCES affiliation_fish (id)
+	FOREIGN KEY (affiliation) REFERENCES groups_fish (id)
 );
 
 INSERT INTO ident (id, affiliation, name, image, discription) VALUES (
