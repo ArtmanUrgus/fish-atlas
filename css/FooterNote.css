@@ -5,11 +5,20 @@
 
 @media screen and  (min-width: 641px) {
     .footer_note {
-        background-color: #e6e7deff;
-        position: relative;
+        border-style: solid;
+        border-width: 4px 0 0 0;
+        border-color: #e6e7deff;
+        margin-top: 30px;
+        min-height: 250px;
+        /*position: relative;
+        margin: auto;
+        top: 0;
         right: 0;
         bottom: 0;
-        left: 0;
+        left: 0;*/
+
+        position: static;
+        bottom: 0;
     }
     #footer_text{
         /* BEGIN: набор свойств центрирующих блок по вертикали*/

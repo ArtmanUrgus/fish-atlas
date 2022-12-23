@@ -8,12 +8,17 @@
     .previewButton{
         display: initial;
         border-radius: 8px;
-        min-height: 160px;
-        min-width: 120px;
+        min-height: 320px;
+        width: 224px;
         margin: 3px;
+        cursor: pointer;
     }
     .previewButton:hover {
         background-color: #F2F2F2;
+    }
+
+    .previewButton:hover .imageView{
+        border-color: #cccccc;
     }
 
     .label {
@@ -23,18 +28,25 @@
 
     .imageView{
         object-fit: cover;
+        object-position: left center;
         border-color: #85cfc2ff;
         border-style: solid;
         border-radius: 6px;
         border-width: 3px;
-        width: 110px;
-        height: 110px;
+        width: 210px;
+        height: 210px;
         margin: 4px;
     }
 
     .previewButton .name{
         color: #85cfc2ff;
+        width: 190px;
         font-weight: normal;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+
     }
 
     .previewButton:hover .point {

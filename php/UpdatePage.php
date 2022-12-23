@@ -5,8 +5,8 @@ if (isset($_GET['contentID'])) {
 if (isset($_GET['pageID'])) {
     $_COOKIE['pageID'] = $_GET['pageID'];
 }
-if (isset($_GET['articleName'])) {
-    $_COOKIE['articleName'] = $_GET['articleName'];
+if (isset($_GET['articleId'])) {
+    $_COOKIE['articleId'] = $_GET['articleId'];
 }
 if (isset($_GET['viewID'])) {
     $_COOKIE['viewID'] = $_GET['viewID'];

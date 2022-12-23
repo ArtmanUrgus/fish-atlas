@@ -1,15 +1,16 @@
 <?php
 
 require_once "NavigationControls.php";
+require_once "DataDispatcher.php";
 
 class Article
 {
     // @formatter:off
-    static private function article($descript, $title, $text): string
+    static private function article($title, $text): string
     {
         return '<div class="articleContainer">'.
             '<div class="titleText" id="article">'. $title.'</div>'.
-                '<div id="titleDescript">'.$descript.'</div>'.
+                '<div id="titleDescript">Вид:</div>'.
                 '<div class="separatorH"></div>'.
                 '<div id="articleText">'. $text .'</div>'.
                 '<div class="separatorH"></div>'.
@@ -33,14 +34,17 @@ class Article
 
     static private function header(): string
     {
+        $db = new DataDispatcher();
+
+        if( $db->connectDB() )
+        {
+            $title = $db->familyTitle()->fetch();
+        }
+        $db->disconnectDB();
+
         return
             '<div class="headerContainer">'.
-                Navi::infoPanel("Класс:", "Костные рыбы").
-                Navi::infoPanel("Отряд:", "Карпообразные").
-                Navi::infoPanel("Надотряд:", "").
-                Navi::infoPanel("Семейство:", "Карповые").
-                Navi::infoPanel("Род:", "").
-                Navi::infoPanel("Вид:", "").
+                Navi::infoPanel($title['name']).
             '</div>';
     }
 
@@ -50,40 +54,29 @@ class Article
             '<div class="imageContainer">' .
                 '<img src="' . $sourcePath . '" alt="' . $label . '" id="atlasImage">' .
                 '<div class="imgContainer">Нажмите на изображение для увеличенного просмотра </div>' .
-            '</div>' .
-            '<div id="myModal" class="modal">' .
-                '<span class="close">&times;</span>' .
-                '<img class="modal-content" id="img01" alt="' . $label . '">' .
-                '<div id="caption"></div>' .
-            '</div>' .
-            '<script>
-                // Get the image and insert it inside the modal
-                const modal = document.getElementById("myModal");
-                const img = document.getElementById("atlasImage");
-                const modalImg = document.getElementById("img01");
-                const captionText = document.getElementById("caption");
-                img.onclick = function(){
-                  modal.style.display = "block";
-                  modalImg.src = this.src;
-                  //alert(modalImg.clientWidth);
-                  //alert(modalImg.clientHeight);
-                  captionText.innerHTML = this.alt;
-                }
-                const span = document.getElementsByClassName("close")[0]; // close the modal by clicks on <span> 
-                span.onclick = function() { 
-                  modal.style.display = "none";
-                }
-            </script>';
+            '</div>';
     }
 
     static public function createContainer(): string
     {
+        $db = new DataDispatcher();
+
+        if( $db->connectDB() )
+        {
+            $data = $db->article($_COOKIE['articleId']);
+            if( $data !== null )
+            {
+                $specimen = $data->fetch();
+            }
+        }
+        $db->disconnectDB();
+
         return
             '<div>'.
                 self::header().
                 '<div class="article">'.
-                    self::articleImage("./img/fishes/karas.jpg", "Серебристый карась").
-                    self::article("Вид:", $_COOKIE['articleName'], self::demoText()).
+                    self::articleImage($specimen['image'], $specimen['name']).
+                    self::article($specimen['name'], $specimen['discription']).
                 '</div>'.
             '</div>';
     }

@@ -3,61 +3,38 @@
 class Navi
 {
     // @formatter:off
-    static private $disriptionType = [
-        "Класс:" => "classFisch",
-        "Надотряд:" => 'subclassFisch',
-        "Отряд:" => 'groupsFisch',
-        "Семейство:" => 'familyFisch',
-        "Род:" => 'genusFisch',
-        "Вид:" => 'speciesFisch',
-        "Подвид:" => 'subspeciesFisch'
-    ];
 
-    static public function treeButton($descript, $label, $type, $dbID) : string
+    static public function treeButton($label, $dbID) : string
     {
-        if($_COOKIE['familyID'] == $label)
+        $type = 'selectable';
+        if($_COOKIE['familyID'] == $dbID)
             $type = 'active';
 
-        $types = array('disabled', 'enabled', 'active', 'selectable');
-
-        if( in_array($type, $types) ) {
-            return
-                '<div class="treeButton '.$type.'" id="'. self::$disriptionType[$descript].'" name="'.$label.'" value="'.$dbID.'" onclick="setFamilyId(this)">' .
-                    '<div class="point '.$type.'"></div>' .
-                    '<div class="labelBox">' .
-                        '<div class="name '.$type.'">' . $label . '</div>' .
-                        '<div class="descript '.$type.'">' . $descript . '</div>' .
-                    '</div>' .
-                '</div>';
-        }else{
-            if( true ) echo "Type ".$type." for controlContainer is invalid";
-        }
-        return '';
+        return
+            '<div class="treeButton '.$type.'" id="groupsFisch" name="'.$label.'" value="'.$dbID.'" onclick="setFamilyId(this)">' .
+                '<div class="point '.$type.'"></div>' .
+                '<div class="labelBox">' .
+                    '<div class="name '.$type.'">' . $label . '</div>' .
+                    '<div class="descript '.$type.'">Отряд:</div>' .
+                '</div>' .
+            '</div>';
     }
 
-    static public function contentOverviewPanel($descript, $label, $type) : string
+    static public function contentOverviewPanel($label, $image, $dbId) : string
     {
-        $types = array('list', 'contentView', 'preview');
-
-        if( in_array($type, $types) ) {
             return
-                '<div class="linkButton '.$type.'">' .
-                    '<div class="point '.$type.'"></div>' .
+                '<div class="linkButton contentView" value="'. $dbId.'" onclick="setArticleId(this)">' .
+                    '<div class="point"></div>' .
                     '<div class="labelBox">' .
-                        '<div class="name '.$type.'">' . $label . '</div>' .
-                        '<div class="descript '.$type.'">' . $descript . '</div>' .
+                        '<div class="descript contentView">Вид:</div>' .
+                        '<div class="name contentView">' . $label . '</div>' .
                     '</div>'.
+                    '<img class="imageOverview" src="' . $image . '" alt="'.$label.'">' .
                 '</div>';
-        }else{
-            if( true ) echo "Type ".$type." for controlContainer is invalid";
-        }
-        return '';
     }
 
-    static public function listOverviewPanel($descript, $label, $type, $text, $imageSource) : string
+    static public function listOverviewPanel($label, $text, $imageSource, $dbId) : string
     {
-        if( $type === 'list' ) {
-
             if( $text !== '' )
             {
                 $textBox = '<div class="listText">'.$text.'</div>';
@@ -71,61 +48,49 @@ class Navi
             }
 
             return
-                '<div class="listButton '.$type.'" name="article" value="'.$label.'" onclick="setArticleId(this)">' .
+                '<div class="listButton list" name="article" value="'. $dbId.'" onclick="setArticleId(this)">' .
                 $imageBox.
                 '<div class="listLabel">' .
                     '<div class="point"></div>' .
                         '<div class="labelBox">' .
-                            '<div class="name '.$type.'">' . $label . '</div>' .
-                            '<div class="descript '.$type.'">' . $descript . '</div>' .
+                            //'<div class="descript list">Вид:</div>' .
+                            '<div class="name list">' . $label . '</div>' .
                         '</div>' .
                     '</div>' .
                     $textBox.
                 '</div>';
-        }else{
-            if( true ) echo "Type ".$type." for controlContainer is invalid";
-        }
-        return '';
     }
 
-    static public function infoPanel($descript, $name) : string
+    static public function infoPanel($name) : string
     {
-        if( $name === '' ) return '';
-
         return
             '<div class="infoPanel">'.
                 '<div class="point"></div>'.
                 '<div class="labelBox">'.
                     '<div id="name">' . $name . '</div>'.
-                    '<div id="descript">' . $descript . '</div>'.
+                    '<div id="descript">Семейство:</div>'.
                 '</div>'.
             '</div>';
     }
 
-    static public function thumbnailOverviewPanel($descript, $label, $type, $imageSource)
+    static public function thumbnailOverviewPanel( $label, $imageSource, $dbId)
     {
-        if( $type === 'preview' ) {
-
-            if( $imageSource !== '')
-            {
-                $imageBox = '<img class="imageView" src="'.$imageSource.'" alt="'.$label.'">';
-            }
-
-            return
-                '<div class="previewButton">' .
-                    $imageBox.
-                    '<div class="label">' .
-                        '<div class="point '.$type.'"></div>' .
-                        '<div class="labelBox">' .
-                            '<div class="name '.$type.'">' . $label . '</div>' .
-                            '<div class="descript '.$type.'">' . $descript . '</div>' .
-                        '</div>' .
-                    '</div>'.
-                '</div>';
-        }else{
-            if( true ) echo "Type ".$type." for controlContainer is invalid";
+        if( $imageSource !== '')
+        {
+            $imageBox = '<img class="imageView" src="'.$imageSource.'" alt="'.$label.'">';
         }
-        return '';
+
+        return
+            '<div class="previewButton" value="'. $dbId.'" onclick="setArticleId(this)">' .
+                $imageBox.
+                '<div class="label">' .
+                    '<div class="point preview"></div>' .
+                    '<div class="labelBox">' .
+                        //'<div class="descript preview">Вид:</div>' .
+                        '<div class="name preview">' . $label . '</div>' .
+                    '</div>' .
+                '</div>'.
+            '</div>';
     }
 
     static public function backPushButton():string
@@ -137,16 +102,16 @@ class Navi
             '</div>';
     }
 
-    static public function overview() : string
+    static public function overview($name, $discription, $image, $dbId) : string
     {
         switch( $_COOKIE['viewID'] )
         {
             case 'preview':
-                return Navi::thumbnailOverviewPanel("Вид:", "Лосось", "preview", "./img/fishes/semga.jpg");
+                return Navi::thumbnailOverviewPanel($name, $image, $dbId);
             case 'list':
-                return  Navi::listOverviewPanel("Вид:", "Лосось", "list", Article::demoText(), "./img/fishes/semga.jpg");
+                return  Navi::listOverviewPanel( $name, $discription, $image, $dbId);
             case 'contentView':
-                return  Navi::contentOverviewPanel("Вид:", "Лосось", "contentView");
+                return  Navi::contentOverviewPanel( $name, $image, $dbId);
         }
     }
 }

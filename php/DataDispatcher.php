@@ -49,4 +49,24 @@ class DataDispatcher
         }
         return null;
     }
+
+    public function specimen($familyId)
+    {
+        if( $this->dbDispatcher !== null ){
+
+            $data = $this->dbDispatcher->query("SELECT id, name, image, discription, affiliation FROM ident WHERE affiliation ='".$familyId."'");
+            return $data;
+        }
+        return null;
+    }
+
+    public function article($dbId)
+    {
+        if( $this->dbDispatcher !== null ){
+
+            $data = $this->dbDispatcher->query("SELECT id, name, image, discription, affiliation FROM ident WHERE id ='".$dbId."'");
+            return $data;
+        }
+        return null;
+    }
 }

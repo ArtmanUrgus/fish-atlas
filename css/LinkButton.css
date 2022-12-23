@@ -22,17 +22,19 @@
     }
 
     .linkButton {
+        background-color: #ffffff00;
         display: flex;
-        height: 38px;
+        width: 220px;
         max-width: 180px;
+        min-height: 80px;
         margin: 4px 10px 4px 4px;
         padding: 2px;
     }
 
     .linkButton.contentView {
         display: flex;
-        height: 38px;
-        max-width: 180px;
+        max-width: 200px;
+        height: 100px;
         margin: 4px 10px 4px 4px;
         padding: 2px;
         padding-right: 8px;
@@ -46,7 +48,6 @@
 
     .linkButton:hover .point{
         background-position: left 0px top -38px;
-        /*background-position: left 0px top -57px;*/
     }
 
     .linkButton:hover .name{
@@ -61,13 +62,34 @@
         font-weight: normal;
         font-size: 18px;
         color: #85cfc2ff;
-        padding-left: 7px;
-        height: 22px;
+        width: 170px;
+        height: 110px;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
     }
 
     .linkButton .descript {
         font-size: 11px;
         color: gray;
-        padding-left: 7px;
+    }
+
+    .imageOverview{
+        position: absolute;
+        object-fit: cover;
+        object-position: left center;
+        /*transition: 0.3s;*/
+        width: 185px;
+        height: 104px;
+        opacity: 0;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-top: -2px;
+        margin-left: 23px;
+    }
+
+    .linkButton:hover .imageOverview{
+        opacity: 1;
     }
 }

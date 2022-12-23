@@ -37,9 +37,9 @@ function setArticleId(control)
         var familyID = getCookieById("familyID") + '&';
         var pageID = 'pageID=article&';
 
-        var articleName = 'articleName=' + control.getAttribute("value");
+        var articleId = 'articleId=' + control.getAttribute("value");
 
-        var requestData = contentID + pageID + viewID + familyID + articleName;
+        var requestData = contentID + pageID + viewID + familyID + articleId;
 
         var request = new XMLHttpRequest();
         request.open('GET', './php/UpdatePage.php?' + requestData, false);

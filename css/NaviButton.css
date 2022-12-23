@@ -8,7 +8,7 @@
     .treeButton {
         display: flex;
         height: 38px;
-        min-width: 180px;
+        min-width: 120px;
         margin: 4px 10px 4px 4px;
         padding: 2px;
     }

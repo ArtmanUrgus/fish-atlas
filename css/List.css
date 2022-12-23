@@ -11,6 +11,7 @@
         width: 95%;
         margin: 4px 10px 4px 4px;
         padding: 2px;
+        cursor: pointer;
     }
 
     .listButton:hover{
@@ -25,6 +26,12 @@
     .name.list{
         color: #85cfc2ff;
         font-weight: normal;
+        position: relative;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        width: 180px;
     }
 
     .listButton .listLabel{
@@ -43,6 +50,7 @@
 
     .imageList{
         object-fit: cover;
+        object-position: left center;
         border-color: #85cfc2ff;
         border-style: solid;
         border-radius: 6px;
