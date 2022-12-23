@@ -19,6 +19,7 @@
 <img src="./img/screens/view-1.jpg" align="center" height="300" width="330" >
 <img src="./img/screens/view-2.jpg" align="center" height="300" width="330" >
 <img src="./img/screens/view-3.jpg" align="center" height="300" width="330" >
-</div>
 <img src="./img/screens/article.jpg" align="center" height="300" width="330" >
+</div>
+
 
