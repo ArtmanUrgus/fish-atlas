@@ -109,12 +109,14 @@
 
     #atlasImage{
         /*display: block;*/
+        object-fit: cover;
+        object-position: center center;
         cursor: pointer;
         transition: 0.75s;
         border-radius: 8px;
         border-width: 4px;
         width: 450px;
-        height: 260px;
+        height: 280px;
     }
 
     #atlasImage:hover {
@@ -126,7 +128,7 @@
         border-radius: 10px;
         position: relative;
         max-width: 468px;
-        height: 260px;
+        height: 280px;
         padding: 4px;
     }
 
