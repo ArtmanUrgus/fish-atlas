@@ -1,6 +1,7 @@
 <?php
 
 require_once "DropDownList.php";
+require_once "Search.php";
 
 class MainMenu
 {
@@ -49,10 +50,13 @@ class MainMenu
     }
     static private function createSearchField(): string
     {
-        return '<form method="POST" action="search.php">'.
-            '<div class="search_field">'.
-            '<input type="text" id="searchText" value="Поиск">'.
-            '</div>'.'<input type="submit" id="submitButton" value="">'.'</form>';
+        return
+            '<form method="POST" action="Search.php">'.
+                '<div class="search_field">'.
+                    '<input type="text" id="searchText" name="query" placeholder="Поиск.." title="Искать по атласу">'.
+                '</div>'.
+                '<input type="submit" id="submitButton" value="">'.
+            '</form>';
     }
     static private function createLangButton(): string
     {

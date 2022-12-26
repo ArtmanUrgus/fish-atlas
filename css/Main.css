@@ -22,7 +22,9 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /*generic*/
 }
-
+html {
+    overflow-y: scroll;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
 section {
     display: block;

@@ -114,4 +114,13 @@ class Navi
                 return  Navi::contentOverviewPanel( $name, $image, $dbId);
         }
     }
+
+    static public function closeModalViewButton():string
+    {
+        return
+            '<div class="backPushButton close" name="atlas" onClick="hiddeModal()">'.
+                '<div class="point"></div>'.
+                '<div class="labelBox">Закрыть</div>'.
+            '</div>';
+    }
 }

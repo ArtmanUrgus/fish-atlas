@@ -31,6 +31,8 @@ echo '<link href="./css/FooterNote.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/MainMenu.css" rel="stylesheet" type="text/css">';
 
 echo '<script src="./js/NavigationControls.js"></script>';
+echo '<script src="./js/ModalWindow.js"></script>';
+echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>';
 
 echo '<html>';
     echo '<head>';

@@ -104,3 +104,9 @@ function searchForContent(control){
 
     }
 }
+
+function searchByWord(control){
+    var request = new XMLHttpRequest();
+    request.open('POST','searchContent.php?contentID='+control.value+'',false);
+    request.send();
+}

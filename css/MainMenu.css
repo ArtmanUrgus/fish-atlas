@@ -47,7 +47,7 @@
         padding-left: 35px;
     }
     a.button #fisch_icon{
-        background: #ffffff00 url("../img/fisch.png") no-repeat 0px 0px;
+        background: #ffffff00 url("../svg/fisch.svg") no-repeat 0px 0px;
     }
     a.button:hover #fisch_icon{
         background-position: left 0px top -26px;

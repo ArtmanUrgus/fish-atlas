@@ -64,7 +64,6 @@ class MainPage
         return
             '<div class="mainAtlasContent">'.
                 '<div class="mainNavi">' . self::navigation() . '</div>'.
-                '<div class="separatorV"></div>'.
                 '<div class="mainContent">' .
                     self::contentOverview() .
                 '</div>'.
