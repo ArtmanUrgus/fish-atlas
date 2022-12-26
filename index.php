@@ -29,6 +29,7 @@ echo '<link href="./css/DropDownList.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/Footer.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/FooterNote.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/MainMenu.css" rel="stylesheet" type="text/css">';
+echo '<link href="./css/Contact.css" rel="stylesheet" type="text/css">';
 
 echo '<script src="./js/NavigationControls.js"></script>';
 echo '<script src="./js/ModalWindow.js"></script>';

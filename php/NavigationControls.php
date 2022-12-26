@@ -115,12 +115,21 @@ class Navi
         }
     }
 
-    static public function closeModalViewButton():string
+    static public function closeButton():string
     {
         return
-            '<div class="backPushButton close" name="atlas" onClick="hiddeModal()">'.
+            '<div class="backPushButton" id="closeButton" name="atlas" onClick="hiddeModal()">'.
                 '<div class="point"></div>'.
                 '<div class="labelBox">Закрыть</div>'.
             '</div>';
+    }
+
+    static public function submitButton(): string
+    {
+        return
+        '<button type="submit" class="backPushButton">'.
+            '<div class="point"></div>'.
+            '<div class="labelBox">Отправить</div>'.
+        '</button >';
     }
 }

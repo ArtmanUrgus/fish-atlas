@@ -50,8 +50,10 @@ class Article
                             '<a href="#close" title="Close" class="close" onClick="hiddeModal()">×</a>'.
                         '</div>'.
                         '<div class="modal-body">'.
-                            '<img src="' . $sourcePath . '" alt="' . $label . '" id="modalImage">'.
-                            Navi::closeModalViewButton().
+                            '<div class="modalImageBox">'.
+                                '<img src="' . $sourcePath . '" alt="' . $label . '" id="modalImage">'.
+                            '</div>'.
+                            Navi::closeButton().
                         '</div>'.
                     '</div>'.
                 '</div>'.

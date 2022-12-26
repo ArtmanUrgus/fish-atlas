@@ -39,4 +39,8 @@
     .backPushButton .labelBox{
         padding-left: 10px;
     }
+
+    #closeButton{
+        width: 120px;
+    }
 }

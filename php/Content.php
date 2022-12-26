@@ -1,7 +1,7 @@
 <?php
 require_once "Identifier.php";
 require_once "Atlas.php";
-require_once "Kontakt.php";
+require_once "Contakt.php";
 
 class Content
 {
@@ -20,7 +20,7 @@ class Content
             case 'ident':
                 return '<div class="content">'.Identifier::createContainer().'</div>';
             case 'contact':
-                return '<div class="content">'.Kontakt::createContainer().'</div>';
+                return '<div class="content">'.Contakt::createContainer().'</div>';
         }
         return '';
     }
