@@ -15,11 +15,11 @@
 В папке проекта ./db размещен файл installdb.txt. Запуск файла на сервере MySQL создает базу данных fishatlas со всеми необходимыми таблицами и записями.</br></br>
 
 <div style="display=flex;">
-<img src="./img/screens/view-1.jpg" align="center" height="300" width="330" >
-<img src="./img/screens/view-2.jpg" align="center" height="300" width="330" >
-<img src="./img/screens/view-3.jpg" align="center" height="300" width="330" >
-<img src="./img/screens/article.jpg" align="center" height="300" width="330" >
-<img src="./img/screens/modalView.jpg" align="center" height="300" width="330" >
+<img src="./img/screens/view-1.jpg" align="center" height="300" width="330" style="paddin-top: 10px;">
+<img src="./img/screens/view-2.jpg" align="center" height="300" width="330" style="paddin-top: 10px;">
+<img src="./img/screens/view-3.jpg" align="center" height="300" width="330" style="paddin-top: 10px;">
+<img src="./img/screens/article.jpg" align="center" height="300" width="330" style="paddin-top: 10px;">
+<img src="./img/screens/modalView.jpg" align="center" height="300" width="330" style="paddin-top: 10px;">
 </div></br></br>
 <span style="color=red;"><b>Приведенная база данных составлена на основе атласа-определителя рыб за авторством Н.А. Мягкого, и не может быть использована для публичного доступа, без разрешения автора. Все права на используемый текст принадлежат Н.А. Мягкову. Весь фотоматериал найден поисковой машиной Yandex и не может быть использован для публичного доступа, без разрешения авторов изображений.</b></span></br></br>
 
