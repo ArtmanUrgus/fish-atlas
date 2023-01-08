@@ -14,7 +14,7 @@ function setContentId(control)
         var viewID = getCookieById("viewID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var familyID = getCookieById("familyID") + '&';
-        var contentID = 'contentID=' + control.getAttribute("name");
+        var contentID = 'contentID=' + control.getAttribute("data-name");
         document.cookie = contentID;
 
         var requestData = pageID + viewID + familyID + contentID;
@@ -37,7 +37,7 @@ function setArticleId(control)
         var familyID = getCookieById("familyID") + '&';
         var pageID = 'pageID=article&';
 
-        var articleId = 'articleId=' + control.getAttribute("value");
+        var articleId = 'articleId=' + control.getAttribute("data-id");
 
         var requestData = contentID + pageID + viewID + familyID + articleId;
 
@@ -53,11 +53,12 @@ function setArticleId(control)
 
 function setViewId(control)
 {
-    if (document.cookie.length > 0) {
+    var id = control.getAttribute("data-id");
+    if (document.cookie.length > 0 ) {
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var familyID = getCookieById("familyID") + '&';
-        var viewID = 'viewID=' + control.getAttribute("name");
+        var viewID = 'viewID=' + id;
         document.cookie = viewID;
 
         var requestData = contentID + pageID + familyID + viewID;
@@ -74,12 +75,15 @@ function setViewId(control)
 
 function setFamilyId(control)
 {
-    if (document.cookie.length > 0) {
+    var id = control.getAttribute("data-id");
+
+    if (document.cookie.length > 0 && id > 0) {
 
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var viewID = getCookieById("viewID") + '&';
-        var familyID = 'familyID=' +  control.getAttribute("value");
+        var familyID = 'familyID=' +  id;
+
         document.cookie = familyID;
 
         var requestData = contentID + pageID + viewID + familyID;
@@ -94,19 +98,24 @@ function setFamilyId(control)
     }
 }
 
-function searchForContent(control){
-
-    var request = new XMLHttpRequest();
-    request.open('GET','searchContent.php?contentID='+control.value+'',false);
-    request.send();
-
-    if (request.status==200) {
-
-    }
-}
-
 function searchByWord(control){
     var request = new XMLHttpRequest();
     request.open('POST','searchContent.php?contentID='+control.value+'',false);
     request.send();
 }
+
+var treebtns = document.getElementsByClassName('treeButton');
+if (treebtns.length >= 1) {
+    for (var i = 0; i < treebtns.length; i++) {
+        treebtns[i].addEventListener('click', function() {
+                    setFamilyId(treebtns[i]);
+            },false);
+    }
+}
+
+//document.querySelectorAll('.dropdown-item').forEach(item => {
+    //item.onclick = setViewId( item.getAttribute("data-id") );
+    //item.addEventListener('click', event => {
+    //    setViewId(item.getAttribute("data-id"));
+    //})
+//})

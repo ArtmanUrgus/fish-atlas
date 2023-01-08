@@ -6,7 +6,7 @@
 @media screen and  (min-width: 641px) {
     .menu{
         background-color: #1a1a1aff;
-        height: 42px;
+        height: 49px;
     }
     .nav{
         /* BEGIN: набор свойств центрирующих блок по вертикали*/
@@ -17,7 +17,7 @@
         bottom: 0;
         left: 0;
         /* END:   набор свойств центрирующие блок по вертикали*/
-        height: 42px;
+        height: 49px;
         display: flex;
         width: 950px;
     }
@@ -53,27 +53,31 @@
         background-position: left 0px top -26px;
     }
     .search_field{
+        display: flex;
         border-color: #808080ff;
         background-color: white;
         border-width: 4px;
         border-radius: 5px;
         width: 400px;
-        height: 26px;
+        height: 35px;
         margin: 8px;
     }
     #searchText{
         margin: 4px;
         background-color: white;
+        font-size: 16px;
+        font-weight: bold;
         border-width: 0px;
-        color: #838e31ff;
+        color: #85cfc2ff;
         width: 390px;
     }
-    #searchText:active {
+    #searchText:focus {
         border-width: 0px;
-        user-focus: none;
+        /*user-focus: none;*/
+        color: #346e63ff;
     }
     #submitButton{
-        margin: 8px 0 8px 0;
+        margin: 4px 4px 0 0;
         background: dimgray url("../svg/search.svg") no-repeat 0px 0px;
         border-radius: 3px;
         border-width: 0px;
@@ -104,4 +108,21 @@
         font-weight: normal;
         white-space: initial;
     }
+}
+
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
 }

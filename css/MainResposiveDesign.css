@@ -48,3 +48,20 @@
         margin: 0 0 30px 0;
     }
 }
+
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
+}

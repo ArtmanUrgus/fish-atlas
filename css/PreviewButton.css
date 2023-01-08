@@ -5,6 +5,7 @@
 
 @media screen and  (min-width: 641px) {
 
+
     .previewButton{
         display: initial;
         border-radius: 8px;
@@ -56,4 +57,21 @@
     .previewButton:hover .name {
         color: #346e63ff;
     }
+}
+
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
 }

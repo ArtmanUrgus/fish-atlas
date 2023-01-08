@@ -112,7 +112,7 @@
     }
 
     /* Links inside the dropdown */
-    .dropdown-content a {
+    .dropdown-item {
         font-weight: normal;
         color: #346e63ff;
         padding: 12px 16px;
@@ -121,7 +121,7 @@
     }
 
     /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {
+    .dropdown-item:hover {
         background-color: #daf5f5;
     }
 
@@ -134,4 +134,21 @@
     .dropdown:hover .sandwichSelector {
         background-color: #346e63ff;
     }
+}
+
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
 }

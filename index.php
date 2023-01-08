@@ -31,10 +31,6 @@ echo '<link href="./css/FooterNote.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/MainMenu.css" rel="stylesheet" type="text/css">';
 echo '<link href="./css/Contact.css" rel="stylesheet" type="text/css">';
 
-echo '<script src="./js/NavigationControls.js"></script>';
-echo '<script src="./js/ModalWindow.js"></script>';
-echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>';
-
 echo '<html>';
     echo '<head>';
         echo '<meta charset=UTF-8>';
@@ -42,5 +38,12 @@ echo '<html>';
     echo '</head>';
 
     echo html_entity_decode( PageSubject::createContainer() );
+
+    echo '<script src="./js/NavigationControls.js"></script>';
+    echo '<script src="./js/ModalWindow.js"></script>';
+    echo '<script src="./js/jquery.min.js"></script>';
+    echo '<script src="http://code.jquery.com/jquery-3.6.3.min.js"></script>';
+    echo '<script src="./js/SearchRequest.js"></script>';
+
 echo '</html>';
 ?>

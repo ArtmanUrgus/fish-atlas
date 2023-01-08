@@ -3,7 +3,7 @@
 
 @import "Fonts.css";
 
-@media screen and  (min-width: 641px) {
+@media screen and (min-width: 641px) {
     .content {
         /* BEGIN: набор свойств центрирующих блок по вертикали*/
         position: relative;
@@ -29,7 +29,8 @@
         bottom: 0;
         left: 0;
         /* END:   набор свойств центрирующие блок по вертикали*/
-        font-size: 12px;
+        font-size: 16px;
+        color: #919191;
         width: 590px;
         padding-bottom: 30px;
     }
@@ -38,4 +39,20 @@
         text-align: center;
         color: #026644ff;
     }
+}
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
 }

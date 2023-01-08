@@ -49,3 +49,20 @@ table {
     outline: none;
 }
 
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
+}
+

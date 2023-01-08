@@ -11,7 +11,7 @@ class Navi
             $type = 'active';
 
         return
-            '<div class="treeButton '.$type.'" id="groupsFisch" name="'.$label.'" value="'.$dbID.'" onclick="setFamilyId(this)">' .
+            '<div class="treeButton '.$type.'" id="groupsFisch" data-name="treebtn_'.$dbID.'" data-id="'.$dbID.'" onclick="setFamilyId(this)">' .
                 '<div class="point '.$type.'"></div>' .
                 '<div class="labelBox">' .
                     '<div class="name '.$type.'">' . $label . '</div>' .
@@ -23,7 +23,7 @@ class Navi
     static public function contentOverviewPanel($label, $image, $dbId) : string
     {
             return
-                '<div class="linkButton contentView" value="'. $dbId.'" onclick="setArticleId(this)">' .
+                '<div class="linkButton contentView" data-id="'. $dbId.'" onclick="setArticleId(this)">' .
                     '<div class="point"></div>' .
                     '<div class="labelBox">' .
                         '<div class="descript contentView">Вид:</div>' .
@@ -48,7 +48,7 @@ class Navi
             }
 
             return
-                '<div class="listButton list" name="article" value="'. $dbId.'" onclick="setArticleId(this)">' .
+                '<div class="listButton list" data-name="article" data-id="'. $dbId.'" onclick="setArticleId(this)">' .
                 $imageBox.
                 '<div class="listLabel">' .
                     '<div class="point"></div>' .
@@ -81,7 +81,7 @@ class Navi
         }
 
         return
-            '<div class="previewButton" value="'. $dbId.'" onclick="setArticleId(this)">' .
+            '<div class="previewButton" data-id="'. $dbId.'" onclick="setArticleId(this)">' .
                 $imageBox.
                 '<div class="label">' .
                     '<div class="point preview"></div>' .
@@ -96,7 +96,7 @@ class Navi
     static public function backPushButton():string
     {
         return
-            '<div class="backPushButton" name="atlas" onclick="setContentId(this)">'.
+            '<div class="backPushButton" data-name="atlas" onclick="setContentId(this)">'.
                 '<div class="point"></div>'.
                 '<div class="labelBox">Вернуться к оглавлению</div>'.
             '</div>';
@@ -118,7 +118,7 @@ class Navi
     static public function closeButton():string
     {
         return
-            '<div class="backPushButton" id="closeButton" name="atlas" onClick="hiddeModal()">'.
+            '<div class="backPushButton" id="closeButton" data-name="atlas" onClick="hiddeModal()">'.
                 '<div class="point"></div>'.
                 '<div class="labelBox">Закрыть</div>'.
             '</div>';
@@ -127,7 +127,7 @@ class Navi
     static public function submitButton(): string
     {
         return
-        '<button type="submit" class="backPushButton">'.
+        '<button type="submit" class="backPushButton" id="contactSubmitButton">'.
             '<div class="point"></div>'.
             '<div class="labelBox">Отправить</div>'.
         '</button >';

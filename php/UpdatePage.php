@@ -14,10 +14,15 @@ if (isset($_GET['viewID'])) {
 if (isset($_GET['familyID'])) {
     $_COOKIE['familyID'] = $_GET['familyID'];
 }
+if (isset($_GET['searchKey'])) {
+    $_COOKIE['searchKey'] = $_GET['searchKey'];
+    echo "searchKey = ".$_COOKIE['searchKey'];
+}
 
 require_once "PageSubject.php";
 
 $page = new PageSubject();
 
 echo html_entity_decode( $page->createContainer() );
+
 ?>

@@ -11,9 +11,9 @@ class SandwichSelector
                 '<div id="downPath"></div>'.
             '</button >'.
             '<div class="dropdown-content">'.
-                '<a href="#" name="preview" onclick="setViewId(this)"><div class="dropdownContent" id="dc1"></div>Значки</a>'.
-                '<a href="#" name="contentView" onclick="setViewId(this)"><div class="dropdownContent" id="dc2"></div>Список</a>'.
-                '<a href="#" name="list" onclick="setViewId(this)"><div class="dropdownContent" id="dc3"></div>Содержимое</a>'.
+                '<dev data-id="preview" class="dropdown-item" onClick="setViewId(this)"><div class="dropdownContent" id="dc1"></div>Значки</dev>'.
+                '<dev data-id="contentView" class="dropdown-item" onClick="setViewId(this)"><div class="dropdownContent" id="dc2"></div>Список</dev>'.
+                '<dev data-id="list" class="dropdown-item" onClick="setViewId(this)"><div class="dropdownContent" id="dc3"></div>Содержимое</dev>'.
             '</div>'.
         '</div>';
     }

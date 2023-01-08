@@ -264,3 +264,20 @@
         font-size: 18px;
     }
 }
+
+
+@media handheld and (min-width: 240px) {
+
+}
+
+@media print{
+
+}
+
+@media projection {
+
+}
+
+@media tv {
+
+}

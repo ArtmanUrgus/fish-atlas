@@ -33,30 +33,34 @@ class MainMenu
     static public function createContainer(): string
     {
         self::setActiveButton( $_COOKIE['contentID'] );
-        return '<form><div class="menu"><div class="nav">'.
-            self::createButton("АТЛАС", self::$atlasActive, 'atlas').
-            self::createButton("ОПРЕДЕЛИТЕЛЬ", self::$identActive, 'ident').
-            self::createSearchField().
-            self::createButton("КОНТАКТ", self::$kontaktActive, 'contact').
-            self::createLangButton().
-            '</div></div></form>';
+        return
+            '<form>
+                <div class="menu">
+                    <div class="nav">'.
+                        self::createButton("АТЛАС", self::$atlasActive, 'atlas').
+                        self::createButton("ОПРЕДЕЛИТЕЛЬ", self::$identActive, 'ident').
+                        self::createSearchField().
+                        self::createButton("КОНТАКТ", self::$kontaktActive, 'contact').
+                        self::createLangButton().
+                    '</div>
+                </div>
+            </form>';
     }
 
     static private function createButton($titel, $state, $id): string
     {
         if( $state === true )
             return '<a class="button" id="active_state"><div id="fisch_icon"><span id="titel">'.$titel.'</span></div></a>';
-        return '<a class="button" name="'.$id.'" onclick="setContentId(this)"><div id="fisch_icon" ><span id="titel" >'.$titel.'</span></div></a>';
+        return '<a class="button" data-name="'.$id.'" onclick="setContentId(this)"><div id="fisch_icon" ><span id="titel" >'.$titel.'</span></div></a>';
     }
     static private function createSearchField(): string
     {
         return
-            '<form method="POST" action="Search.php">'.
-                '<div class="search_field">'.
-                    '<input type="text" id="searchText" name="query" placeholder="Поиск.." title="Искать по атласу">'.
-                '</div>'.
-                '<input type="submit" id="submitButton" value="">'.
-            '</form>';
+            '<div class="search_field">'.
+                '<input type="text" id="searchText" class="searchQuery" placeholder="Поиск.." title="Искать по атласу">'.
+                '<script src="./js/SearchRequest.js"></script>'.
+                '<button id="submitButton" value="" onclick="searchEvent()"></button>'.
+            '</div>';
     }
     static private function createLangButton(): string
     {
