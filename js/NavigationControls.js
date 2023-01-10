@@ -16,14 +16,16 @@ function request(data)
     request.open('GET', './php/UpdatePage.php?' + data, false);
     request.send(null);
 
-    if (request.status == 200) {
+    if (request.status == 200)
+    {
         document.getElementById("mainContent").innerHTML = request.responseText;
     }
 }
 
 function setContentId(control)
 {
-    if (document.cookie.length > 0) {
+    if (document.cookie.length > 0)
+    {
         var viewID = getCookieById("viewID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var familyID = getCookieById("familyID") + '&';
@@ -36,7 +38,8 @@ function setContentId(control)
 
 function setArticleId(control)
 {
-    if (document.cookie.length > 0) {
+    if (document.cookie.length > 0)
+    {
         var contentID = getCookieById("contentID") + '&';
         var viewID = getCookieById("viewID") + '&';
         var familyID = getCookieById("familyID") + '&';
@@ -50,7 +53,9 @@ function setArticleId(control)
 function setViewId(control)
 {
     var id = control.getAttribute("data-id");
-    if (document.cookie.length > 0 ) {
+
+    if (document.cookie.length > 0 )
+    {
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var familyID = getCookieById("familyID") + '&';
@@ -65,8 +70,8 @@ function setFamilyId(control)
 {
     var id = control.getAttribute("data-id");
 
-    if (document.cookie.length > 0 && id > 0) {
-
+    if (document.cookie.length > 0 && id > 0)
+    {
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
         var viewID = getCookieById("viewID") + '&';
@@ -77,8 +82,10 @@ function setFamilyId(control)
     }
 }
 
-function searchEvent() {
-    if (document.cookie.length > 0) {
+function searchEvent()
+{
+    if (document.cookie.length > 0)
+    {
         var viewID = getCookieById("viewID") + '&';
         var contentID = getCookieById("contentID") + '&';
         var pageID = getCookieById("pageID") + '&';
@@ -88,7 +95,6 @@ function searchEvent() {
 
         request(pageID + viewID + familyID + contentID + searchRequest);
     }
-    //$('#searchText').val('');
 }
 
 function alertValue(v){
@@ -103,10 +109,3 @@ if (treebtns.length >= 1) {
             },false);
     }
 }
-
-//document.querySelectorAll('.dropdown-item').forEach(item => {
-    //item.onclick = setViewId( item.getAttribute("data-id") );
-    //item.addEventListener('click', event => {
-    //    setViewId(item.getAttribute("data-id"));
-    //})
-//})
