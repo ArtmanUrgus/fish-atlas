@@ -7,7 +7,7 @@ class Content
 {
     static public function createContainer(): string
     {
-        $atlasPages = array('main', 'article');
+        $atlasPages = array('main', 'article', 'searchResult');
 
         switch ( $_COOKIE['contentID'] )
         {

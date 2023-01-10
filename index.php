@@ -7,6 +7,7 @@ setcookie('pageID', 'main');
 setcookie('articleName', '');
 setcookie('viewID', 'preview');
 setcookie('familyID', '1');
+setcookie('searchRequest', '');
 
 $_COOKIE['familyID'] = '1';
 
@@ -43,7 +44,6 @@ echo '<html>';
     echo '<script src="./js/ModalWindow.js"></script>';
     echo '<script src="./js/jquery.min.js"></script>';
     echo '<script src="http://code.jquery.com/jquery-3.6.3.min.js"></script>';
-    echo '<script src="./js/SearchRequest.js"></script>';
 
 echo '</html>';
 ?>

@@ -8,6 +8,19 @@ function getCookieById(cookieId)
     return RegExp(cookieId+"=[^;]+").exec(document.cookie);
 }
 
+function request(data)
+{
+    // alert(data);
+
+    var request = new XMLHttpRequest();
+    request.open('GET', './php/UpdatePage.php?' + data, false);
+    request.send(null);
+
+    if (request.status == 200) {
+        document.getElementById("mainContent").innerHTML = request.responseText;
+    }
+}
+
 function setContentId(control)
 {
     if (document.cookie.length > 0) {
@@ -17,15 +30,7 @@ function setContentId(control)
         var contentID = 'contentID=' + control.getAttribute("data-name");
         document.cookie = contentID;
 
-        var requestData = pageID + viewID + familyID + contentID;
-
-        var request = new XMLHttpRequest();
-        request.open('GET', './php/UpdatePage.php?' + requestData, false);
-        request.send(null);
-
-        if (request.status == 200) {
-            document.getElementById("mainContent").innerHTML = request.responseText;
-        }
+        request(pageID + viewID + familyID + contentID);
     }
 }
 
@@ -36,18 +41,9 @@ function setArticleId(control)
         var viewID = getCookieById("viewID") + '&';
         var familyID = getCookieById("familyID") + '&';
         var pageID = 'pageID=article&';
-
         var articleId = 'articleId=' + control.getAttribute("data-id");
 
-        var requestData = contentID + pageID + viewID + familyID + articleId;
-
-        var request = new XMLHttpRequest();
-        request.open('GET', './php/UpdatePage.php?' + requestData, false);
-        request.send(null);
-
-        if (request.status == 200) {
-            document.getElementById("mainContent").innerHTML = request.responseText;
-        }
+        request(contentID + pageID + viewID + familyID + articleId);
     }
 }
 
@@ -61,15 +57,7 @@ function setViewId(control)
         var viewID = 'viewID=' + id;
         document.cookie = viewID;
 
-        var requestData = contentID + pageID + familyID + viewID;
-
-        var request = new XMLHttpRequest();
-        request.open('GET', './php/UpdatePage.php?' + requestData, false);
-        request.send(null);
-
-        if (request.status == 200) {
-            document.getElementById("mainContent").innerHTML = request.responseText;
-        }
+        request(contentID + pageID + familyID + viewID );
     }
 }
 
@@ -83,25 +71,28 @@ function setFamilyId(control)
         var pageID = getCookieById("pageID") + '&';
         var viewID = getCookieById("viewID") + '&';
         var familyID = 'familyID=' +  id;
-
         document.cookie = familyID;
 
-        var requestData = contentID + pageID + viewID + familyID;
-
-        var request = new XMLHttpRequest();
-        request.open('GET', './php/UpdatePage.php?' + requestData, false);
-        request.send(null);
-
-        if (request.status == 200) {
-            document.getElementById("mainContent").innerHTML = request.responseText;
-        }
+        request(contentID + pageID + viewID + familyID);
     }
 }
 
-function searchByWord(control){
-    var request = new XMLHttpRequest();
-    request.open('POST','searchContent.php?contentID='+control.value+'',false);
-    request.send();
+function searchEvent() {
+    if (document.cookie.length > 0) {
+        var viewID = getCookieById("viewID") + '&';
+        var contentID = getCookieById("contentID") + '&';
+        var pageID = getCookieById("pageID") + '&';
+        var familyID = getCookieById("familyID") + '&';
+        var searchRequest = 'searchRequest=' + $('#searchText').val();
+        document.cookie = searchRequest;
+
+        request(pageID + viewID + familyID + contentID + searchRequest);
+    }
+    //$('#searchText').val('');
+}
+
+function alertValue(v){
+    alert(v);
 }
 
 var treebtns = document.getElementsByClassName('treeButton');

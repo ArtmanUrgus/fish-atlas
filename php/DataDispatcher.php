@@ -70,49 +70,13 @@ class DataDispatcher
         return null;
     }
 
-    public function serach($query) : string
+    public function seracharticle($searchRequest)
     {
-        $dsn = 'mysql:host=localhost; dbname=fishatlas';
-        $user = 'root';
-        $password = '';
+        if( $this->dbDispatcher !== null ){
 
-        if (!mysqli_connect($dsn, $user, $password)) {
-            exit('Cannot connect to server');
+            $data = $this->dbDispatcher->query("SELECT id, name, image, discription, affiliation FROM ident WHERE name LIKE '%".$searchRequest."%'");
+            return $data;
         }
-        if (!mysqli_select_db($dsn)) {
-            exit('Cannot select database');
-        }
-        $query = mysqli_real_escape_string($query);
-
-        $q = "SELECT id, name, image, discription, affiliation FROM ident WHERE name LIKE '%$query%' OR discription LIKE '%$query%'";
-        $result = mysqli_query($q);
-
-        if (mysqli_affected_rows() > 0) {
-            $row = mysqli_fetch_assoc($result);
-            $num = mysqli_num_rows($result);
-
-            echo '<p>По запросу <b>'.$query.'</b> найдено совпадений: '.$num.'</p>';
-/*
-            do {
-                // Делаем запрос, получающий ссылки на статьи
-                $q1 = "SELECT `link` FROM `table_name` WHERE `uniq_id` = '$row[page_id]'";
-                $result1 = mysqli_query($q1);
-
-                if (mysqli_affected_rows() > 0) {
-                    $row1 = mysqli_fetch_assoc($result1);
-                }
-
-                $text .= '<p><a> href="'.$row1['link'].'/'.$row['category'].'/'.$row['uniq_id'].'" title="'.$row['title_link'].'">'.$row['title'].'</a></p>
-                    <p>'.$row['desc'].'</p>';
-
-            } while ($row = mysqli_fetch_assoc($result));
-*/
-            echo $result;
-
-        } else {
-            $text = '<p>По вашему запросу ничего не найдено.</p>';
-        }
-
-        return $text;
+        return null;
     }
 }

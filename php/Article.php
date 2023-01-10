@@ -60,6 +60,18 @@ class Article
             '</div>';
     }
 
+    static public function getArticle($data) : string
+    {
+        return
+            '<div>'.
+                self::header().
+                '<div class="article">'.
+                    self::articleImage($data['image'], $data['name']).
+                    self::article($data['name'], $data['discription']).
+                '</div>'.
+            '</div>';
+    }
+
     static public function createContainer(): string
     {
         $db = new DataDispatcher();
@@ -74,13 +86,6 @@ class Article
         }
         $db->disconnectDB();
 
-        return
-            '<div>'.
-                self::header().
-                '<div class="article">'.
-                    self::articleImage($specimen['image'], $specimen['name']).
-                    self::article($specimen['name'], $specimen['discription']).
-                '</div>'.
-            '</div>';
+        return self::getArticle($specimen);
     }
 }
