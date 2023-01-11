@@ -3,6 +3,7 @@
 require_once "DataDispatcher.php";
 require_once "Article.php";
 require_once "NavigationControls.php";
+require_once "MainPage.php";
 
 class Search{
 
@@ -18,9 +19,18 @@ class Search{
 
         if( $data !== null )
         {
-            $specimen = $data->fetch();
-            if( $specimen != null ) {
-                return Article::getArticle($specimen);
+            $dbItems = '';
+            if( $data != null )
+            {
+                reset($data); // reset to first position
+                while ($row = $data->fetch()) {
+                    $dbItems = $dbItems.Navi::overview($row['name'], $row['discription'], $row['image'], $row['id']);
+            }
+
+            return
+                '<div class="contentBox '.$_COOKIE['viewID'].'">'.
+                    $dbItems.
+                '</div><br><br>'.Navi::backPushButton();;
             }
         }
 

@@ -86,19 +86,26 @@ function searchEvent()
 {
     if (document.cookie.length > 0)
     {
-        var viewID = getCookieById("viewID") + '&';
-        var contentID = getCookieById("contentID") + '&';
-        var pageID = getCookieById("pageID") + '&';
-        var familyID = getCookieById("familyID") + '&';
-        var searchRequest = 'searchRequest=' + $('#searchText').val();
-        document.cookie = searchRequest;
+        if( $('#searchText').val() !== "" )
+        {
+            var requestedText = encodeURIComponent($('#searchText').val());
+            var viewID = getCookieById("viewID") + '&';
+            var contentID = getCookieById("contentID") + '&';
+            var pageID = getCookieById("pageID") + '&';
+            var familyID = getCookieById("familyID") + '&';
+            var searchRequest = 'searchRequest=' + requestedText;
 
-        request(pageID + viewID + familyID + contentID + searchRequest);
+            document.cookie = searchRequest;
+
+            request(pageID + viewID + familyID + contentID + searchRequest);
+        }
     }
 }
 
-function alertValue(v){
-    alert(v);
+function translate(control)
+{
+    var id = control.getAttribute("data-id");
+    alert(id);
 }
 
 var treebtns = document.getElementsByClassName('treeButton');
