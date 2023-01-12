@@ -42,6 +42,7 @@ if (isset($_GET['familyID'])) {
 if (isset($_GET['searchRequest'])) {
     $_COOKIE['searchRequest'] = $_GET['searchRequest'];
     $_COOKIE['pageID'] = 'searchResult';
+    $_COOKIE['contentID'] = 'atlas';
 }
 
 require_once "PageSubject.php";

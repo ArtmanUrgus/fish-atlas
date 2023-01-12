@@ -29,28 +29,21 @@ if($_POST) {
     }
 
     if($concerned_department == "billing") {
-        $recipient = "artmanurgus@yandex.ru";
+        $recipient = "test@mail.ru";
     }
     else if($concerned_department == "marketing") {
-        $recipient = "artmanurgus@yandex.ru";
+        $recipient = "test@mail.ru";
     }
     else if($concerned_department == "technical support") {
-        $recipient = "artmanurgus@yandex.ru";
+        $recipient = "test@mail.ru";
     }
     else {
-        $recipient = "artmanurgus@yandex.ru";
+        $recipient = "test@mail.ru";
     }
 
     $headers  = 'MIME-Version: 1.0' . "\r\n"
         .'Content-type: text/html; charset=utf-8' . "\r\n"
         .'From: ' . $visitor_email . "\r\n";
 
-    if(mail($recipient, $email_title, $visitor_message, $headers)) {
-        echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
-    } else {
-        echo '<p>We are sorry but the email did not go through.</p>';
-    }
-
-} else {
-    echo '<p>Something went wrong</p>';
+    mail($recipient, $email_title, $visitor_message, $headers);
 }

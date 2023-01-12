@@ -74,33 +74,7 @@
         color: gray;
         padding-left: 7px;
     }
-/*
-    .treeButton#subclassFisch {
-        padding-left: 10px;
-    }
-
-    .treeButton#groupsFisch {
-        padding-left: 20px;
-    }
-
-    .treeButton#familyFisch {
-        padding-left: 30px;
-    }
-
-    .treeButton#genusFisch {
-        padding-left: 40px;
-    }
-
-    .treeButton#speciesFisch {
-        padding-left: 50px;
-    }
-
-    .treeButton#subspeciesFisch {
-        padding-left: 60px;
-    }
- */
 }
-
 
 @media handheld and (min-width: 240px) {
 

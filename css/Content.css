@@ -5,30 +5,27 @@
 
 @media screen and (min-width: 641px) {
     .content {
-        /* BEGIN: набор свойств центрирующих блок по вертикали*/
         position: relative;
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        /* END:   набор свойств центрирующие блок по вертикали*/
+
         padding: 30px 0px 30px 0px;
         width: 950px;
-        /*min-height: 550px;*/
     }
     .line1{
         display: flex;
     }
     .identifier_note {
-        /* BEGIN: набор свойств центрирующих блок по вертикали*/
         position: relative;
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        /* END:   набор свойств центрирующие блок по вертикали*/
+
         font-size: 16px;
         color: #919191;
         width: 590px;

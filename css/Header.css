@@ -26,14 +26,12 @@
         user-select: none;
     }
     #identHeader{
-        /* BEGIN: набор свойств центрирующих блок по вертикали*/
         position: relative;
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        /* END:   набор свойств центрирующие блок по вертикали*/
 
         width: 950px;
         align-self: flex-end;

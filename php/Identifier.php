@@ -1,17 +1,10 @@
 <?php
 
-require_once "IdentMainMenu.php";
-require_once "IdentContent.php";
-require_once "IdentSubMenu.php";
-require_once "InteractiveSelector.php";
-
 class Identifier
 {
     static public function createContainer(): string
     {
         return self::note().
-            IdentMainMenu::createContainer() . IdentContent::createContainer() . IdentContent::createContainer().
-            InteractiveSelector::createContainer() .
             self::fuss_note();
     }
     static private function note():string

@@ -42,7 +42,6 @@ echo '<html>';
 
     echo '<script src="./js/NavigationControls.js"></script>';
     echo '<script src="./js/ModalWindow.js"></script>';
-    echo '<script src="./js/jquery.min.js"></script>';
     echo '<script src="http://code.jquery.com/jquery-3.6.3.min.js"></script>';
 
 echo '</html>';

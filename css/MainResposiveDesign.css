@@ -3,9 +3,6 @@
 
 @media (min-width:641px) {
 
-    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-    /* @media (min-width:801px) */
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
     body {
         display: grid;
         grid-template-areas:
@@ -24,31 +21,6 @@
         margin: 0 0 30px 0;
     }
 }
-
-@media (max-width:641px) {
-
-    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-    /* @media (min-width:801px) */
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
-    body {
-        display: grid;
-        grid-template-areas:
-            ". "
-            "mainmenu"
-            "mainContent"
-            "footer";
-
-        grid-template-rows: 40px 0vh 95vh 7vh;
-        grid-template-columns: 100%;
-        grid-row-gap: 10px;
-        grid-column-gap: 0px;
-
-        height: 100%;
-
-        margin: 0 0 30px 0;
-    }
-}
-
 
 @media handheld and (min-width: 240px) {
 

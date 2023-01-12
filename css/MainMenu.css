@@ -9,14 +9,13 @@
         height: 49px;
     }
     .nav{
-        /* BEGIN: набор свойств центрирующих блок по вертикали*/
         position: relative;
         margin: auto;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        /* END:   набор свойств центрирующие блок по вертикали*/
+
         height: 49px;
         display: flex;
         width: 950px;
@@ -73,7 +72,6 @@
     }
     #searchText:focus {
         border-width: 0px;
-        /*user-focus: none;*/
         color: #346e63ff;
     }
     #submitButton{
@@ -95,7 +93,6 @@
         background-color: #808080ff;
         border-width: 0px;
         border-radius: 3px;
-        /*font-weight: bold;*/
         margin: 8px 0 8px 0;
         height: 27px;
         width: 48px;

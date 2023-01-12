@@ -79,7 +79,6 @@
         position: absolute;
         object-fit: cover;
         object-position: left center;
-        /*transition: 0.3s;*/
         width: 185px;
         height: 104px;
         opacity: 0;

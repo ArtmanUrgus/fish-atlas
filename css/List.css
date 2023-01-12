@@ -69,8 +69,6 @@
         width: 440px;
         height: 86px;
 
-        /*white-space: pre-line;*/
-        /*white-space: nowrap;*/
         text-overflow: ellipsis;
         padding-top: 4px;
 
